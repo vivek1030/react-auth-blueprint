@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import PrivateRoute from './helper/PrivateRoute';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Routes>
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-          <Route exact path="/" element={<h2>hhhh</h2>} />
+          <Route path="*" element={<h2>404 page not found</h2>} />
           {/* Add other routes */}
         </Routes>
       </BrowserRouter>
